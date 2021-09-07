@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
 
-    'account'
+    'account',
+    'championship',
+    'player',
+    'team',
 
 
 ]
