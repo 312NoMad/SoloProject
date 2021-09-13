@@ -16,3 +16,16 @@ class Player(models.Model):
     def __str__(self):
         full_name = f'{self.first_name} {self.last_name}'
         return full_name
+
+
+class PlayerStats(models.Model):
+    player = models.ForeignKey(Player,
+                               on_delete=models.CASCADE,
+                               related_name='statics')
+    games = models.PositiveSmallIntegerField()
+    goals = models.PositiveSmallIntegerField()
+    assists = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return self.player
+

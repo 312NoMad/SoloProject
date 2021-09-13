@@ -20,11 +20,13 @@ class Matches(models.Model):
                              related_name='away_matches',)
 
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='released')
-    score = models.CharField(max_length=8)
+    score = models.CharField(max_length=8, blank=True)
     round = models.PositiveSmallIntegerField()
     league = models.ForeignKey(League,
                                on_delete=models.CASCADE,
                                related_name='league_matches')
 
+    def __str__(self):
+        return f'{self.home}    :    {self.away}'
 
 
