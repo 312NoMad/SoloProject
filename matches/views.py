@@ -10,12 +10,10 @@ from .serializers import MatchSerializer
 
 
 class MatchFilter(filters.FilterSet):
-    round_from = filters.NumberFilter('round', 'gte')
-    round_to = filters.NumberFilter('round', 'lte')
 
     class Meta:
         model = Matches
-        fields = ('round_from', 'round_to')
+        fields = ('league',)
 
 
 class MatchViewSet(viewsets.ModelViewSet):
